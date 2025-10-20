@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oceancode - 무한한 가능성을 코딩합니다</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles */
+        body {
+            font-family: 'Noto Sans KR', 'Inter', sans-serif;
+            background-color: #000511; /* Deep ocean blue */
+            color: #E0E0E0;
+        }
+        .hero-bg {
+            background: linear-gradient(180deg, rgba(0, 5, 17, 0) 0%, #000511 100%),
+                        radial-gradient(circle at 50% 30%, rgba(13, 71, 161, 0.5) 0%, rgba(0, 5, 17, 0) 70%);
+        }
+        .glow-effect {
+            box-shadow: 0 0 15px rgba(52, 152, 219, 0.1), 
+                        0 0 30px rgba(52, 152, 219, 0.1),
+                        inset 0 0 10px rgba(52, 152, 219, 0.1);
+        }
+        .section-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 900;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .nav-link:hover {
+            color: #3498db; /* Bright blue for hover */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold font-inter flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-2 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                <span class="text-white">ocean<span class="text-blue-400">code</span></span>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="text-gray-300 nav-link transition-colors duration-300">소개</a>
+                <a href="#vision" class="text-gray-300 nav-link transition-colors duration-300">비전</a>
+                <a href="#products" class="text-gray-300 nav-link transition-colors duration-300">프로덕트</a>
+                <a href="#contact" class="text-gray-300 nav-link transition-colors duration-300">문의</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900 bg-opacity-90">
+            <a href="#about" class="block text-center py-3 px-4 text-sm text-gray-200 hover:bg-gray-800">소개</a>
+            <a href="#vision" class="block text-center py-3 px-4 text-sm text-gray-200 hover:bg-gray-800">비전</a>
+            <a href="#products" class="block text-center py-3 px-4 text-sm text-gray-200 hover:bg-gray-800">프로덕트</a>
+            <a href="#contact" class="block text-center py-3 px-4 text-sm text-gray-200 hover:bg-gray-800">문의</a>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Hero Section -->
+        <section class="min-h-screen flex items-center justify-center text-center hero-bg px-4">
+            <div class="max-w-4xl">
+                <h1 class="text-5xl md:text-7xl font-black text-white leading-tight mb-4 section-title">
+                    깊은 바다의 잠재력처럼,<br class="hidden md:block">
+                    <span class="text-blue-400">무한한 가능성</span>을 코딩합니다.
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
+                    oceancode는 기술의 깊이를 탐험하고, 세상의 새로운 흐름을 만듭니다. 우리는 아이디어를 현실로 만들어 사용자에게 최고의 가치를 제공하는 프로덕트를 개발합니다.
+                </p>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 md:py-32">
+            <div class="container mx-auto px-6 text-center">
+                <div class="max-w-3xl mx-auto">
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 section-title fade-in">WHO WE ARE</h2>
+                    <p class="text-lg text-gray-300 leading-relaxed mb-8 fade-in">
+                        oceancode는 파도처럼 끊임없이 변화하는 디지털 세상 속에서 길을 찾는 탐험가입니다. 우리는 최신 기술에 대한 깊이 있는 이해와 사용자에 대한 공감을 결합하여, 사람들이 마주한 복잡한 문제를 가장 명쾌하고 효과적인 방법으로 해결하는 프로덕트를 만듭니다.
+                    </p>
+                     <div class="w-24 h-1 bg-blue-500 mx-auto rounded-full fade-in"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vision Section -->
+        <section id="vision" class="py-20 md:py-32 bg-black bg-opacity-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-4 section-title fade-in">OUR VISION</h2>
+                    <p class="text-lg text-gray-400 max-w-2xl mx-auto fade-in">우리는 기술이 인간과 세상을 연결하는 가장 강력한 도구라고 믿습니다. oceancode가 그리는 미래는 다음과 같습니다.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-10">
+                    <!-- Vision 1 -->
+                    <div class="bg-gray-900 bg-opacity-50 p-8 rounded-lg border border-gray-800 glow-effect text-center fade-in">
+                        <div class="flex justify-center mb-4">
+                            <svg class="w-12 h-12 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">혁신적인 솔루션</h3>
+                        <p class="text-gray-400">기존의 틀을 깨는 창의적인 아이디어와 기술력으로 전에 없던 새로운 가치를 창출합니다.</p>
+                    </div>
+                    <!-- Vision 2 -->
+                    <div class="bg-gray-900 bg-opacity-50 p-8 rounded-lg border border-gray-800 glow-effect text-center fade-in" style="transition-delay: 200ms;">
+                        <div class="flex justify-center mb-4">
+                           <svg class="w-12 h-12 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">사용자 중심의 가치</h3>
+                        <p class="text-gray-400">우리는 사용자의 목소리에 귀 기울이고, 끊임없는 개선을 통해 더 나은 사용자 경험과 가치를 제공합니다.</p>
+                    </div>
+                    <!-- Vision 3 -->
+                    <div class="bg-gray-900 bg-opacity-50 p-8 rounded-lg border border-gray-800 glow-effect text-center fade-in" style="transition-delay: 400ms;">
+                        <div class="flex justify-center mb-4">
+                           <svg class="w-12 h-12 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2h1a2 2 0 002-2v-1a2 2 0 012-2h1.945M7.905 11A9 9 0 0012 21a9 9 0 004.095-10M12 3a9 9 0 00-4.095 10m0 0a5 5 0 005.318 0m0 0a5 5 0 015.318 0"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">미래를 향한 기술</h3>
+                        <p class="text-gray-400">AI, 빅데이터 등 미래 기술을 적극적으로 탐구하고 도입하여 더 나은 내일을 만들어나갑니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="py-20 md:py-32">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-4 section-title fade-in">OUR PRODUCTS</h2>
+                    <p class="text-lg text-gray-400 max-w-2xl mx-auto fade-in">oceancode는 세상을 더 나은 곳으로 만들기 위해 다음과 같은 프로덕트를 만들고 운영합니다.</p>
+                </div>
+                <div class="max-w-4xl mx-auto space-y-12">
+                    <!-- Product 1 -->
+                    <div class="md:flex items-center gap-8 fade-in">
+                        <div class="md:w-1/3 mb-4 md:mb-0">
+                             <img src="https://placehold.co/600x400/0A192F/3498DB?text=Project+Flow" alt="Project Flow" class="rounded-lg shadow-2xl glow-effect">
+                        </div>
+                        <div class="md:w-2/3">
+                            <h3 class="text-3xl font-bold text-blue-400 mb-2">Project Flow</h3>
+                            <p class="text-gray-300 mb-4">팀의 협업 효율을 극대화하는 올인원 프로젝트 관리 툴입니다. 칸반 보드, 간트 차트, 실시간 채팅 기능을 통해 프로젝트의 모든 과정을 한눈에 파악하고 관리할 수 있습니다.</p>
+                             <div class="flex flex-wrap gap-2">
+                                <span class="bg-gray-800 text-blue-300 text-xs font-medium px-2.5 py-1 rounded-full">Web App</span>
+                                <span class="bg-gray-800 text-blue-300 text-xs font-medium px-2.5 py-1 rounded-full">SaaS</span>
+                                <span class="bg-gray-800 text-blue-300 text-xs font-medium px-2.5 py-1 rounded-full">Collaboration</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 2 -->
+                    <div class="md:flex flex-row-reverse items-center gap-8 fade-in">
+                        <div class="md:w-1/3 mb-4 md:mb-0">
+                            <img src="https://placehold.co/600x400/0A192F/3498DB?text=Data+Dive" alt="Data Dive" class="rounded-lg shadow-2xl glow-effect">
+                        </div>
+                        <div class="md:w-2/3">
+                            <h3 class="text-3xl font-bold text-blue-400 mb-2">Data Dive</h3>
+                            <p class="text-gray-300 mb-4">복잡한 데이터를 손쉽게 분석하고 시각화할 수 있는 AI 기반 데이터 분석 플랫폼입니다. 코딩 없이도 누구나 데이터 전문가처럼 인사이트를 발견하고 비즈니스 의사결정에 활용할 수 있습니다.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-gray-800 text-blue-300 text-xs font-medium px-2.5 py-1 rounded-full">AI</span>
+                                <span class="bg-gray-800 text-blue-300 text-xs font-medium px-2.5 py-1 rounded-full">Data Visualization</span>
+                                <span class="bg-gray-800 text-blue-300 text-xs font-medium px-2.5 py-1 rounded-full">Analytics</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 md:py-32 bg-black bg-opacity-20">
+            <div class="container mx-auto px-6 text-center">
+                 <h2 class="text-4xl md:text-5xl font-bold text-white mb-4 section-title fade-in">GET IN TOUCH</h2>
+                 <p class="text-lg text-gray-400 max-w-2xl mx-auto mb-12 fade-in">oceancode의 여정에 관심이 있으신가요?<br>저희의 프로덕트에 대한 피드백이나 비전에 대한 이야기가 있다면 언제든지 연락 주세요.</p>
+                 <a href="mailto:contact@oceancode.com" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-10 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 inline-block fade-in">
+                    메일 보내기
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 bg-opacity-40 py-8">
+        <div class="container mx-auto px-6 text-center text-gray-500">
+            <p>&copy; <span id="year"></span> oceancode. All Rights Reserved.</p>
+            <p class="text-sm mt-2">이 웹사이트는 포트폴리오 목적으로 제작되었습니다.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileMenuLinks = document.querySelectorAll('#mobile-menu a, header nav a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                // For mobile, hide menu. Check if menu is visible before hiding
+                if(!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Header background on scroll
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('bg-gray-900', 'bg-opacity-80', 'backdrop-blur-sm', 'shadow-lg');
+            } else {
+                header.classList.remove('bg-gray-900', 'bg-opacity-80', 'backdrop-blur-sm', 'shadow-lg');
+            }
+        });
+
+        // Scroll animations
+        const fadeInElements = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        fadeInElements.forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
+
